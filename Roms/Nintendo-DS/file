@@ -1,0 +1,9 @@
+<div style="width:100%; height:100vh; max-width:100%;">
+    <div id="game"></div>
+</div>
+<script type="text/javascript">
+    EJS_player = '#game';
+    EJS_gameUrl = ''; // Url to Game rom
+    EJS_core = 'nds';  // Optional core: melonds
+</script>
+<script src="https://www.emulatorjs.com/loader.js"></script>
