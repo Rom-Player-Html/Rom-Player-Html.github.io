@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emulator</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    #game {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+
+  <script type="text/javascript">
+    EJS_player = '#game';
+    EJS_gameUrl = 'https://Rom-Player-Html.github.io/Roms/SNES/Tom%20&%20Jerry.smc'; // Url to Game ROM
+    EJS_core = 'snes';
+    EJS_mouse = false; // SNES Mouse
+    EJS_multitap = false; // SNES Multitap
+  </script>
+  <script src="https://www.emulatorjs.com/loader.js"></script>
+</body>
+</html>
