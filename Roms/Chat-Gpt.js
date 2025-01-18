@@ -81,13 +81,13 @@
     return {
         // Module 0xb (Game loader or main module)
         '0xb': function (module, exports, require) {
-            // Initialize game-related variables and URLs
-            var ejs_gameUrl = "https://example.com/game";
-            var ejs_loader_url = "https://example.com/loader";
+            // Initialize game-related variables without external dependencies
+            var gameMessage = "Welcome to the game!";
+            var loaderMessage = "Loading game, please wait...";
 
-            // Simulate loading the game with provided URLs
-            console.log("Loading game from:", ejs_gameUrl);
-            console.log("Loading game loader from:", ejs_loader_url);
+            // Simulate loading the game with internal messages instead of URLs
+            console.log(gameMessage);
+            console.log(loaderMessage);
 
             // Example game start logic (this can be replaced with actual game loading logic)
             function startGame() {
