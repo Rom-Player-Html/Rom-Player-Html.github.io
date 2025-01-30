@@ -1,0 +1,45 @@
+<div id="game-container" style="width:100%; height:100vh; display: flex; justify-content: center; align-items: center;">
+    <div id="game" style="width:100%; height:auto;"></div>
+</div>
+
+<script type="text/javascript">
+    // Set the target div where the emulator will load
+    EJS_player = '#game';
+
+    // Set the URL for the BIOS file (if required for your game/emulator)
+    EJS_biosUrl = '';  // Optional: Provide the URL to the BIOS file if needed by the core
+
+    // Provide the URL to the game ROM
+    EJS_gameUrl = 'https://rom-player-html.github.io/Roms/GBA/South Park.n64'; // Replace with actual URL of the game
+
+    // Set the core for the emulator
+    EJS_core = 'n64'; 
+
+    // Load the EmulatorJS script
+    var script = document.createElement('script');
+    script.src = "https://www.emulatorjs.com/loader.js";
+    script.onload = function() {
+        // Initialize the emulator once the script is loaded
+        if (EJS_gameUrl) {
+            // Ensure a valid game URL is provided
+            EJS_loadGame(EJS_gameUrl, EJS_player, EJS_biosUrl, EJS_core);
+        } else {
+            console.error('Game URL is missing!');
+        }
+    };
+    document.head.appendChild(script); // Dynamically add the script to the page
+
+    // Make sure the emulator window resizes correctly when the window changes size
+    window.addEventListener('resize', function() {
+        const gameContainer = document.getElementById('game-container');
+        const gameWindow = document.getElementById('game');
+        
+        // Dynamically adjust the game width and height to maintain aspect ratio
+        const containerWidth = gameContainer.offsetWidth;
+        gameWindow.style.width = `${containerWidth}px`;
+        gameWindow.style.height = 'auto'; // Let height adjust to the aspect ratio
+    });
+
+    // Trigger initial resizing
+    window.dispatchEvent(new Event('resize'));
+</script>
